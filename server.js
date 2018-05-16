@@ -23,7 +23,7 @@ app.set("view engine", "handlebars");
 var connection = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "YourPass Goes Here",
+  password: "******",
   database: "foodBoxHero_db"
 });
 
@@ -53,7 +53,8 @@ app.get("/", function(req, res) {
 
 
 // Start our server so that it can begin listening to client requests.
-app.listen(PORT, function() {
-  // Log (server-side) when our server has started
+app.listen(PORT, function(err) {
+    if(err)throw err
+  //If our server has started
   console.log("Server listening on: http://localhost:" + PORT);
 });
