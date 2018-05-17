@@ -1,10 +1,10 @@
 // *********************************************************************************
 // api-routes.js - this file offers a set of routes for displaying and saving data to the db
 // *********************************************************************************
-
+/*
 // Dependencies
 // =============================================================
-var Donations = require("../models/donations.js");
+var Donations = require("../models/user.js");
 
 
 // Routes
@@ -57,4 +57,42 @@ module.exports = function(app) {
 
   });
 
+};
+*/
+// *********************************************************************************
+// api-routes.js - this file offers a set of routes for displaying and saving data to the db
+// *********************************************************************************
+
+// Dependencies
+// =============================================================
+
+// Grabbing our models
+
+var db = require("../models");
+
+// Routes
+// =============================================================
+module.exports = function(app) {
+  app.get("/", function(req, res) {
+    db.Post.findAll({})
+      .then(function(dbDonations) {
+        res.json(dbDonations);
+      });
+  });
+
+
+  // POST route for saving a new donation. You can create a donations using the data on req.body
+  app.post("/api/donations", function(req, res) {
+
+  });
+
+  // DELETE route for deleting todos. You can access the todo's id in req.params.id
+  app.delete("/api/donations/:id", function(req, res) {
+
+  });
+
+  // PUT route for updating todos. The updated todo will be available in req.body
+  app.put("/api/donations", function(req, res) {
+
+  });
 };

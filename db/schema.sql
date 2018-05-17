@@ -8,7 +8,7 @@ CREATE TABLE donations (
 
   business varchar(255),
 
-  foodtype varchar(255) NOT NULL,
+  category varchar(255) NOT NULL,
 
   quantity_avalaible int(11) NOT NULL,
 
