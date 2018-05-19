@@ -28,7 +28,7 @@ module.exports = function(app) {
       // Take the request...
       var d = rec.body;
 
-    console.log("Donations Data:");
+    console.log("Donate Data:");
     console.log(d);
 
    
