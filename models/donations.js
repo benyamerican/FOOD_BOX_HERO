@@ -20,15 +20,13 @@ var Donations = sequelize.define("donations", {
   }
 },
 
-
-
-    quantity_avalaible: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-      len: [1]
-    }
-  },
+quantity_avalaible: {
+  type: DataTypes.INTEGER,
+  allowNull: false,
+  validate: {
+  len: [1]
+}
+},
         
     address: {
       type: DataTypes.STRING,
@@ -61,7 +59,7 @@ var Donations = sequelize.define("donations", {
       len: [1]
     }
   },
-              
+     
     created_at: {
       type: DataTypes.DATE,
       allowNull: false,

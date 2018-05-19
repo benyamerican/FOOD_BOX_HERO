@@ -15,7 +15,7 @@ module.exports = function(app) {
 
   // Get all donations
   app.get("/donations", function(req, res) {
-    db.donations.findAll({}).then(function(results) {
+    db.Donations.findAll({}).then(function(results) {
       // results are available to us inside the .then
       res.json(results);
     });
@@ -26,39 +26,24 @@ module.exports = function(app) {
   app.post("/api/newdonations", function(req, res) {
 
       // Take the request...
-      var donate = req.body;
+      var d = rec.body;
 
     console.log("Donations Data:");
-    console.log(donate);
+    console.log(d);
 
    
     Donations.create({
-      business: donate.business,
-
-      donorText: donate.donorText,
-
-      quantity_avalaible: donate.quantity_avalaible,
-
-      category: donation.category,
-
-      address: donate.address,
-
-      
-
-      category: donate.category,
-
-      // food type dropdown select
-
-      // allergens checkbox select
-      
-      pickupDate: donate.pickupDate,
-
-      lastCall: donate.lastCall,
-
-      
-      
-
-      created_at: donate.created_at,
+      business:d.business,
+      food:d.food,
+      quantity_avalaible:d.quantity_avalaible,
+      address:d.address,
+      lastCall:d.lastCall,
+      pickupDate:d.lastCall,
+      donorText:d.donorText,
+      created_at:d.created_at,
+      updated_at:d.updated_at,
+      category:d.category,
+      allergen:d.allergen
       
     }).then(function(results) {
       // `results` here would be the newly created donations
